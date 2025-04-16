@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Route Stops and Dynamic Pricing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 60%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .stop-section {
+            border: 1px dashed #ccc;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Add Stops with Dynamic Stop-to-Stop Pricing</h1>
+
+        <form id="route-form">
+            <label for="bus_id">Bus ID:</label>
+            <input type="text" id="bus_id" name="bus_id" required placeholder="Enter Bus ID">
+
+            <div id="stops-container">
+                <div class="stop-section">
+                    <label for="stop_1">Stop Name:</label>
+                    <input type="text" id="stop_1" name="stop[]" required placeholder="Enter stop name">
+                </div>
+            </div>
+
+            <button type="button" id="add-stop">Add Another Stop</button>
+
+            <hr>
+
+            <div id="pricing-container"></div>
+
+            <button type="button" id="generate-pricing">Generate Pricing Fields</button>
+
+            <button type="submit">Submit Route and Prices</button>
+        </form>
+
+        <div id="response-message"></div>
+    </div>
+
+    <script>
+        let stopCount = 1;
+
+        // Add a new stop dynamically
+        document.getElementById('add-stop').addEventListener('click', function () {
+            stopCount++;
+            const stopsContainer = document.getElementById('stops-container');
+            const stopSection = document.createElement('div');
+            stopSection.classList.add('stop-section');
+            stopSection.innerHTML = `
+                <label for="stop_${stopCount}">Stop Name:</label>
+                <input type="text" id="stop_${stopCount}" name="stop[]" required placeholder="Enter stop name">
+            `;
+            stopsContainer.appendChild(stopSection);
+        });
+
+        // Generate pricing fields dynamically for each stop-to-stop combination
+        document.getElementById('generate-pricing').addEventListener('click', function () {
+            const stops = document.querySelectorAll('input[name="stop[]"]');
+            const pricingContainer = document.getElementById('pricing-container');
+            pricingContainer.innerHTML = '';
+
+            // Create a pricing field for each pair of stops
+            for (let i = 0; i < stops.length; i++) {
+                for (let j = i + 1; j < stops.length; j++) {
+                    const fromStop = stops[i].value || `Stop ${i + 1}`;
+                    const toStop = stops[j].value || `Stop ${j + 1}`;
+
+                    const priceField = document.createElement('div');
+                    priceField.innerHTML = `
+                        <label>Price from ${fromStop} to ${toStop}:</label>
+                        <input type="number" name="price_${i}_${j}" required placeholder="Enter price">
+                    `;
+                    pricingContainer.appendChild(priceField);
+                }
+            }
+        });
+
+        // Handle form submission
+        document.getElementById('route-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            const stopNames = formData.getAll('stop[]');
+            const pricingData = {};
+
+            // Collect all pricing fields from the form
+            stopNames.forEach((fromStop, i) => {
+                stopNames.forEach((toStop, j) => {
+                    if (i < j) {
+                        const priceKey = `price_${i}_${j}`;
+                        pricingData[`${fromStop} to ${toStop}`] = formData.get(priceKey);
+                    }
+                });
+            });
+
+            console.log("Submitted Data:");
+            console.log("Stops:", stopNames);
+            console.log("Pricing Data:", pricingData);
+
+            // Add your own logic here to send the data to the server via AJAX or other methods
+
+            alert('Route and pricing data submitted successfully!');
+        });
+    </script>
+
+</body>
+</html>

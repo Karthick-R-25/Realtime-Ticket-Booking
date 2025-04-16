@@ -1,0 +1,1123 @@
+.nav-list {
+    list-style: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+   
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    font-family: "Poppins", sans-serif;
+    
+}
+:root{
+    --main-color:rgb(0, 255, 94);
+    --white-color:white;
+}
+
+
+.main {
+    height: 100vh;
+    width: 100%;
+   
+   
+    
+}
+
+.container-fluid {
+    display: flex;
+    background-color: rgb(14, 169, 71);
+    height: 8rem;
+    margin-top: -2%;
+    margin-bottom: -1%;
+    
+   
+
+}
+
+.main2 {
+    height: 100%;
+}
+
+.container-fluid img {
+    width: 10%;
+    height: 100%;
+    margin-top: 4.98%;
+}
+
+.navbar-nav {
+    display: flex;
+    position: absolute;
+    left: 74%;
+    gap: 20%;
+    
+
+
+}
+.navbar-nav :hover{
+    background-color: var(--main-color);
+    color: var(--white-color);
+}
+.nav-items{
+    text-decoration: none;
+    padding-top: 1rem;
+}
+
+.navbar-nav li a {
+    color: black;
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    transition: 0.3s;
+
+}
+
+.navbar-nav li a:hover {
+    color: rgb(33, 42, 81);
+
+    text-decoration-color: rose;
+
+
+}
+
+.navbar-toggler {
+    position: absolute;
+    left: 80%;
+}
+
+.sub-main {
+    position: absolute;
+    top: 9rem;
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    gap: 1rem;
+   
+   
+}
+.out-images{
+    height: 4rem!important ;
+    width: 4rem!important;
+    cursor: pointer;
+}
+.sub-sub {
+    
+    justify-items: center;
+    padding: 1rem;
+  
+    border: none;
+    border: 3px solid var(--main-color);
+    border-radius: 2rem;
+    width: 40rem;
+    height: 35rem;
+}
+.btn-grid1{
+   margin-top: 50%;
+   width: 6rem;
+   height: 3rem;
+   border-radius: 1rem;
+   background-color: var(--main-color);
+   font-size: 1rem;
+   font-family: 'Times New Roman', Times, serif;
+}
+.sub-sub.nactive{
+    background-image: url("./img/blurmain.jpg");
+    width: 80%;
+    height: 78%;
+    padding: 2rem;
+    background-size: cover;
+    background-position: center;
+  
+   
+
+}
+.content {
+   
+    margin-left: 2.3rem;
+     border-radius: 3rem;
+    color: white;
+    text-align: center;
+    padding: 3rem;
+    background-color: rgba(0, 0, 0, 0.418); /* Optional: Add a semi-transparent overlay */
+    filter: blur(none); 
+    box-shadow: 0px 0px 10px rgba(227,228,237,0.37);
+    border:1px solid rgba(255,255, 255,0.18);
+  }
+  .sign{
+    text-decoration: none;
+    color: var(--main-color);
+    font-size: 1.3rem;
+    padding: 0.8rem;
+    border:1px solid var(--main-color);
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 10px rgba(227,228,237,0.37);
+    background-color: transparent;
+  }
+  .sub-sub.conductor{
+    background-image: url("./img/conblur.jpg");
+    width: 80%;
+    height: 78%;
+    padding: 2rem;
+    background-size: cover;
+    background-position: center;
+  
+}
+.logp{
+   visibility: hidden;
+    width: 30%;
+    height: 35rem;
+    border: 3px solid var(--main-color);
+    justify-items: center;
+    position: absolute;
+    top: 30%;
+    left: 38%;
+   
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+   
+}
+.login{
+    visibility: hidden;
+     width: 30%;
+    
+     border: 3px solid var(--main-color);
+     justify-items: center;
+     position: absolute;
+     top: 30%;
+     left: 38%;
+    
+     background-color: white;
+     display: flex;
+     flex-direction: column;
+    
+ }
+ .success{
+     visibility: hidden;
+     width: 30%;
+    
+     border: 3px solid var(--main-color);
+     justify-items: center;
+     position: absolute;
+     top: 30%;
+     left: 38%;
+    
+     background-color: white;
+     display: flex;
+     flex-direction: column;
+    
+ }
+ #pass-log{
+    margin-top: 3%;
+ }
+ .status{
+    height: 5rem;
+    width: 5rem;
+    align-self: center;
+    margin-top: 5rem;
+ }
+ .success h2{
+    font-size: 1.3rem;
+    margin-top: 3.5rem;
+    align-self: center;
+    margin-bottom: 1rem;
+    color: green;
+ }
+.logp input{
+    margin-left: 2rem;
+    border: 1px solid var(--main-color);
+    outline: 1px solid grey;
+    width: 80%;
+   
+    padding: 10px;
+    
+}
+.login input{
+    margin-left: 2rem;
+    border: 1px solid var(--main-color);
+    outline: 1px solid grey;
+    width: 80%;
+   
+    padding: 10px;
+    
+}
+
+.login h2{
+    align-self: center;
+    color: var(--main-color);
+  }
+.logp h2{
+  align-self: center;
+  color: var(--main-color);
+}
+.btn-login{
+    margin-top: 3rem!important;
+    margin-bottom: 1rem;
+}
+.btn-log{
+    margin-top: 0.1rem;
+    padding: 0.5rem;
+    background-color: var(--main-color);
+    font-size: 1.2rem;
+    font-family: 'Times New Roman', Times, serif;
+    width: 30%;
+    margin-left: 8rem;
+  
+    
+}
+.btn-otp{
+    margin-left: 2rem;
+    background-color: var(--main-color);
+    padding: 0.5rem;
+   
+}
+.pass-user{
+    height: 2rem;
+    margin-right: -2rem;
+}
+.logp-close{
+    position: absolute;
+    top: 2%;
+    right: 1%;
+    height: 3%;
+}
+
+
+.visi{
+    visibility: visible;
+}
+.busnav{
+    width: 70rem;
+    height: 7rem;
+}
+.passen-bg{
+    background-image: url("img/buspassen.avif");
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+   
+    
+}
+.form-bg{
+    background-color: rgb(13, 44, 20);
+    width: 40%;
+    height: 30rem;
+    border-radius: 1rem;
+    opacity: 0.9;
+    justify-content: center;
+    position: absolute;
+    left: 30%;
+    top:20%;
+    
+    
+}
+.form{
+    padding: 10%;
+    position: absolute;
+    top: 15%;
+   
+    width: 100rem;
+    
+
+}
+.form-bg label{
+    margin-top: 3%;
+    color: white;
+    font-size: 20px;
+    height: 1%;
+    
+}
+.ent input{
+    margin-top: 1.5rem;
+}
+.form-bg input{
+    outline: none;
+    border: none;
+    border-bottom: 2px solid white;
+    background-color:transparent;
+    font-size: 18px;
+    padding: 0.5rem;
+    width: 70%;
+    
+   color: rgb(228, 222, 222);
+   caret-color: rgb(255, 0, 225);
+}
+.form-bg input::placeholder {
+    color: rgb(164, 141, 141);
+}
+.simp{
+    padding-top: 10%;
+}
+.labels{
+    height: 1rem;
+    width: 5rem;
+    margin-left: -4rem;
+}
+.bus-con{
+  
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(20%,1fr));
+    gap: 3rem;
+}
+.bus-d{
+    margin-left: 1rem;
+    width: 90%;
+    height: 2rem;
+}
+.con-top{
+    padding-top: 3rem;
+ 
+    background-color: #45a049;
+   
+}
+.details-con{
+    
+    background-color: rgb(255, 0, 72);
+    color: black;
+}
+.details-ticket{
+    
+    background-color: rgb(0, 255, 13);
+    color: black;
+}
+.details-pass{
+    
+    background-color: rgb(38, 0, 255);
+    color: black;
+}
+.con-main{
+    height: 3rem;
+    width: 20rem;
+    margin-top: 2rem;
+    margin-left: 3rem;
+    background-color: white;
+    opacity: 2;
+    outline: none;
+}
+.router {
+    margin-top: 5rem;
+    width: 60%;
+    margin-left: 8rem;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+.router .stop-section {
+    border: 1px dashed #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.router label {
+    display: block;
+    margin-bottom: 5px;
+}
+.router input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.router button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.router-button {
+    background-color: rgb(113, 255, 238);
+    font-style: italic;
+    height: 2rem;
+    width: 10rem;
+    border: none;
+    margin-left: 40%;
+    margin-top: 5%;
+    
+    
+    cursor: pointer;
+}
+.route-selector option{
+background-color: white;
+   font-style: italic;
+  
+
+}
+
+.route-selector{
+    padding: 1rem;
+    margin-left: 3%;
+    background-color:var(--main-color);
+  
+}
+
+
+
+.visit{
+    visibility: hidden;
+}
+.router  button:hover {
+    background-color: #45a049;
+}
+#stop-lister{
+    visibility: hidden !important;
+    
+}
+.stop-btn{
+    background-color: var(--main-color);
+    margin-top: 10px;
+    height: 2.5rem;
+    width: 8rem;
+  }
+.direction{
+    margin-left: 1rem;
+    color: white;
+}
+.direction img{
+    height:3rem;
+}
+.main-code{
+    background-color: white;
+    width: auto;
+    color: rgb(255, 0, 106);
+    font-weight: bold;
+    height: 3rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    padding-left: 15%;
+}
+
+.verify-code{
+    background-color: #ccc;
+   
+    width: 50%;
+    font-family: 'Digital-7', monospace;
+    position: absolute;
+    left: 28%;
+    top: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.verify-code label{
+   
+    font-size: 2rem;
+    padding-top: 5rem;
+    font-style: le;
+    align-self: center;
+}
+.verify-code input{
+    height: 5rem;
+    width: 8rem;
+    outline: none;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+   
+    padding-left: 2rem;
+    color: red;
+}
+.code-but{
+    width: 7rem;
+    height: 2.5rem;
+    margin-bottom: 3rem;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: auto; /* Ensures borders are merged into a single border */
+}
+
+th, td {
+    border: 1px solid black; /* Adds a 1px solid black border to table headers and cells */
+    padding: 8px; /* Adds padding inside cells for better readability */
+    text-align: left; /* Aligns text to the left */
+}
+
+th {
+    background-color: #f2f2f2; /* Adds a light gray background to header cells */
+}
+.center-table{
+    visibility: hidden;
+}
+.con-tabs{
+    visibility: hidden;
+}
+.list-table {
+    list-style: none;
+    position: absolute;
+    background-color: white;
+    top:40%;
+    left: 10%;
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  .list-row {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .list-row li {
+    flex: 1;
+    padding: 10px;
+    border-right: 1px solid #eee;
+    text-align: center;
+  }
+
+  .list-header {
+    font-weight: bold;
+    background-color: #f9f9f9;
+  }
+
+  @media only screen and (max-width: 450px) {
+    .login{
+        
+         width: 90%;
+        
+         border: 3px solid var(--main-color);
+         justify-items: center;
+         position: absolute;
+         top: 50%;
+         left: 8rem;
+        
+         background-color: white;
+         display: flex;
+         flex-direction: column;
+        
+     }
+     .container-fluid {
+        display: flex;
+        background-color: rgb(14, 169, 71);
+        height: 8rem;
+        min-width: 43rem;
+      
+        margin-top: -3%;
+        margin-bottom: -1%;
+      
+    }
+     .visi{
+        visibility: visible;
+     }
+     .navbar-toggler {
+        position: absolute;
+        left: 100%;
+    }
+    .form-bg{
+        background-color: rgb(13, 44, 20);
+        min-width: 110%;
+        height: 30rem;
+        border-radius: 1rem;
+        opacity: 0.9;
+        justify-content: center;
+        position: absolute;
+        left: 17%;
+        top:29%;
+        
+        
+    }
+    .passen-bg{
+        background-image: url("img/buspassen.avif");
+        min-width: 42rem;
+        height: 160%;
+        background-repeat: no-repeat;
+        margin-top: -2%;
+        padding-left: 3rem;
+        margin-left: 1rem;
+      
+       
+        
+    }
+    .form-bg input{
+        min-width: 30%;
+}
+  
+    .navbar-toggler {
+        position: absolute;
+        left: 38rem;
+    }
+    .logp{
+      
+        width: 60%;
+        height: 35rem;
+        border: 3px solid var(--main-color);
+        justify-items: center;
+        position: absolute;
+        top: 30%;
+        left: 38%;
+       
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+       
+    }
+    .verify-code{
+        background-color: #ccc;
+       
+        width: 90%;
+        font-family: 'Digital-7', monospace;
+        position: absolute;
+        left: 50%;
+        top: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .list-table {
+        list-style: none;
+        position: absolute;
+        background-color: white;
+        top:40%;
+        left: 40%;
+        margin: 0 auto;
+        width: 100%;
+      }
+      .form-bg{
+        background-color: rgb(13, 44, 20);
+        width: 90%;
+        height: 40rem;
+        border-radius: 1rem;
+        opacity: 0.9;
+        justify-content: center;
+        position: absolute;
+        left: 20%;
+        top:50%;
+        
+        
+    }
+    .navbar-nav {
+        display: flex;
+        position: absolute;
+        left: 150%;
+        width: 8rem;
+        z-index: 10;
+        gap: 20%;
+        background-color: white;
+        
+    
+    
+    }
+    
+
+  }
+  @media only screen and (min-width: 500px) and (max-width: 768px) {
+    .login{
+        
+         width: 70%;
+        
+         border: 3px solid var(--main-color);
+         justify-items: center;
+
+         position: absolute;
+         top: 50vh;
+         left: 23%;
+        
+         background-color: white;
+         display: flex;
+         flex-direction: column;
+        
+     }
+     .visi{
+        visibility: visible;
+     }
+     .container-fluid {
+        display: flex;
+        background-color: rgb(14, 169, 71);
+        height: 8rem;
+        min-width: 111%;
+      
+        margin-top: -3%;
+        margin-bottom: -1%;
+      
+    }
+    .navbar-nav {
+        display: flex;
+        position: absolute;
+        left: 98%;
+        z-index: 10;
+        gap: 20%;
+        background-color: white;
+        
+    
+    
+    }
+    .navbar-toggler {
+        position: absolute;
+        left: 100%;
+    }
+  
+    .logp{
+      
+         width: 60%;
+         height: 35rem;
+         border: 3px solid var(--main-color);
+         justify-items: center;
+         position: absolute;
+         top: 30%;
+         left: 38%;
+        
+         background-color: white;
+         display: flex;
+         flex-direction: column;
+        
+     }
+     .form-bg{
+        background-color: rgb(13, 44, 20);
+        width: 80%;
+        height: 30rem;
+        border-radius: 1rem;
+        opacity: 0.9;
+        justify-content: center;
+        position: absolute;
+        left: 20%;
+        top:29%;
+        
+        
+    }
+    .passen-bg{
+        background-image: url("img/buspassen.avif");
+        width: 111%;
+        height: 110%;
+        margin-top: -2%;
+        background-repeat: no-repeat;
+        padding-left: 3rem;
+      
+       
+        
+    }
+    .form-bg input{
+             min-width: 30%;
+    }
+    .verify-code{
+        background-color: #ccc;
+       
+        width: 80%;
+        font-family: 'Digital-7', monospace;
+        position: absolute;
+        left: 18%;
+        top: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+   
+    
+  }
+  @media only screen and (min-width: 769px) and (max-width: 980px) {
+    .passen-bg{
+        background-image: url("img/buspassen.avif");
+        width: 113%;
+        height: 100%;
+        background-repeat: no-repeat;
+        padding-left: 3rem;
+      
+       
+        
+    }
+    .login{
+        
+        width: 60%;
+       
+        border: 3px solid var(--main-color);
+        justify-items: center;
+        position: absolute;
+        top: 50%;
+        left: 8rem;
+       
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+       
+    }
+    .logp{
+      
+        width: 60%;
+        height: 35rem;
+        border: 3px solid var(--main-color);
+        justify-items: center;
+        position: absolute;
+        top: 30%;
+        left: 23%;
+       
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+       
+    }
+    .navbar-toggler {
+        position: absolute;
+        left: 100%;
+    }
+    .passen-bg{
+        background-image: url("img/buspassen.avif");
+        width: 111%;
+        height: 60rem;
+        margin-top: -2%;
+        background-repeat: no-repeat;
+        padding-left: 3rem;
+      
+       
+        
+    }
+    .navbar-nav {
+        display: flex;
+        position: absolute;
+        left: 98%;
+        z-index: 10;
+        gap: 20%;
+        background-color: white;
+        
+    
+    
+    }
+    .form-bg{
+        background-color: rgb(13, 44, 20);
+        width: 70%;
+        height: 30rem;
+        border-radius: 1rem;
+        opacity: 0.9;
+        justify-content: center;
+        position: absolute;
+        left: 10%;
+        top:29%;
+        
+        
+    }
+    .container-fluid {
+        display: flex;
+        background-color: rgb(14, 169, 71);
+        height: 8rem;
+        min-width: 113%;
+      
+        margin-top: -1%;
+        margin-bottom: -1%;
+      
+    }
+    .verify-code{
+        background-color: #ccc;
+        
+        width: 80%;
+        font-family: 'Digital-7', monospace;
+        position: absolute;
+        left: 15%;
+        top: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+  }
+  @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    .passen-bg{
+        background-image: url("img/buspassen.avif");
+        width: 113%;
+        height: 100%;
+        margin-top: -2%;
+        background-repeat: no-repeat;
+        padding-left: 3rem;
+      
+       
+        
+    }
+    .login{
+        
+        width: 40%;
+       
+        border: 3px solid var(--main-color);
+        justify-items: center;
+        position: absolute;
+        top: 50%;
+        left: 20rem;
+       
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+       
+    }
+    .container-fluid {
+        display: flex;
+        background-color: rgb(14, 169, 71);
+        height: 8rem;
+        min-width: 113%;
+      
+        margin-top: -1%;
+        margin-bottom: -1%;
+      
+    }
+    .form-bg{
+        background-color: rgb(13, 44, 20);
+        width: 50%;
+        height: 30rem;
+        border-radius: 1rem;
+        opacity: 0.9;
+        justify-content: center;
+        position: absolute;
+        left: 30%;
+        top:29%;
+        
+        
+    }
+  }
+  @media only screen and (min-width: 990px) and (max-width: 1024px){
+    .container-fluid {
+        display: flex;
+        background-color: rgb(14, 169, 71);
+        height: 8rem;
+        min-width: 147%;
+      
+        margin-top: -1%;
+        margin-bottom: -1%;
+      
+    }
+    .passen-bg{
+        background-image: url("img/buspassen.avif");
+        width: 147%;
+        margin-top: -2%;
+        height: 130%;
+        background-repeat: no-repeat;
+        padding-left: 3rem;
+      
+       
+        
+    }
+    .navbar-nav {
+        display: flex;
+        position: absolute;
+        left: 110%;
+        z-index: 10;
+        gap: 20%;
+      
+        
+    
+    
+    }
+    .verify-code{
+        background-color: #ccc;
+       
+        width: 50%;
+        font-family: 'Digital-7', monospace;
+        position: absolute;
+        left: 50%;
+        top: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+  }
+  @media only screen and (min-width:450px) and (max-width: 500px){
+    .container-fluid {
+        display: flex;
+        background-color: rgb(14, 169, 71);
+        height: 8rem;
+        min-width:167%;
+        margin-top:-1%;
+        margin-bottom: -1%;
+      } .visi{
+        visibility: visible;
+     }
+     .navbar-toggler {
+        position: absolute;
+        left: 100%;
+    }
+    .form-bg{
+        background-color: rgb(13, 44, 20);
+        min-width: 110%;
+        height: 30rem;
+        border-radius: 1rem;
+        opacity: 0.9;
+        justify-content: center;
+        position: absolute;
+        left: 17%;
+        top:29%;
+        
+        
+    }
+    .passen-bg{
+        background-image: url("img/buspassen.avif");
+        min-width: 160vw;
+        height: 140%;
+        margin-top: -2%;
+        background-repeat: no-repeat;
+        padding-left: 3rem;
+        margin-left: 1rem;
+      
+       
+        
+    }
+    .navbar-nav {
+        display: flex;
+        position: absolute;
+        left: 140%;
+        width: 7rem;
+        z-index: 10;
+        gap: 20%;
+        background-color: white;
+        
+    
+    
+    }
+    .form-bg input{
+        min-width: 30%;
+    }
+  
+    .navbar-toggler {
+        position: absolute;
+        left: 130%;
+    }
+    .logp{
+      
+        width: 60%;
+        height: 35rem;
+        border: 3px solid var(--main-color);
+        justify-items: center;
+        position: absolute;
+        top: 30%;
+        left: 38%;
+       
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+       
+    }
+    .verify-code{
+        background-color: #ccc;
+        height: 80%;
+        width: 100%;
+        font-family: 'Digital-7', monospace;
+        position: absolute;
+        left: 40%;
+        top: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .login{
+        
+        width: 90%;
+       
+        border: 3px solid var(--main-color);
+        justify-items: center;
+        position: absolute;
+        top: 50%;
+        left: 8rem;
+       
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+       
+    }
+   
+    
+
+  }
+
