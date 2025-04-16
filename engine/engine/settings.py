@@ -77,11 +77,11 @@ WSGI_APPLICATION = 'engine.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':'threedigit',
+        'NAME':'threedigit-db',
         'USER':"root",
-        'PASSWORD':"Karthick@spidy",
+        'PASSWORD':"Karthickspidy",
         'PORT':'3306',
-        'HOST': 'threedigit.abcdefghij12.region.rds.amazonaws.com',
+        'HOST': 'threedigit-db.cdgyk8wsshhx.eu-north-1.rds.amazonaws.com',
 
     }
 }
