@@ -78,8 +78,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME':'threedigit-db',
-        'USER':"root",
-        'PASSWORD':"Karthickspidy",
+        'USER':"Karthick",
+        'PASSWORD':"KARTHICKSPIDY",
         'PORT':'3306',
         'HOST': 'threedigit-db.cdgyk8wsshhx.eu-north-1.rds.amazonaws.com',
 
