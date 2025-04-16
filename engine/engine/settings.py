@@ -77,14 +77,17 @@ WSGI_APPLICATION = 'engine.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':'threedigit-db',
-        'USER':"Karthick",
-        'PASSWORD':"KARTHICKSPIDY",
-        'PORT':'3306',
+        'NAME': 'threedigit-db',
+        'USER': 'Karthick',
+        'PASSWORD': 'KARTHICKSPIDY',
         'HOST': 'threedigit-db.cdgyk8wsshhx.eu-north-1.rds.amazonaws.com',
-
+        'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
     }
 }
+
 
 
 # Password validation
