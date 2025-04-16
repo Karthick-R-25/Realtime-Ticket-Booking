@@ -81,7 +81,8 @@ DATABASES = {
         'USER':"root",
         'PASSWORD':"Karthick@spidy",
         'PORT':'3306',
-         'HOST':'localhost'
+        'HOST': 'threedigit.abcdefghij12.region.rds.amazonaws.com',
+
     }
 }
 
