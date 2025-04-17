@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'engine.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'threedigit-db',
+        'NAME': 'ticket-db',
         'USER': 'dharzz',
         'PASSWORD': 'KARTHICKSPIDY',
         'HOST': 'ticket-db.cdgyk8wsshhx.eu-north-1.rds.amazonaws.com',
