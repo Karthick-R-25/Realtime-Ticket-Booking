@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-
+from itertools import chain
 from django.shortcuts import render,redirect
 from django.utils import timezone,text
 from datetime import timedelta
@@ -204,7 +204,8 @@ def save_ticket_code(request):
             Travel=data.get('Travel')
             username=data.get('username')
             ticket_code = data.get('ticket_code')
-            busId=data.get('busId')
+            busId=data.get('busId'),
+            mobile=data.get("mobile")
 
             TicketCode.objects.create(
                 route=route,
@@ -212,7 +213,8 @@ def save_ticket_code(request):
                 travel=Travel,
                 user=username,
                 ticket_code=ticket_code,
-                bus_id=busId
+                bus_id=busId,
+                mobile=mobile
             )
 
             return JsonResponse({"message": "Ticket saved successfully!"})
@@ -249,7 +251,8 @@ def move_expired_tickets(request):
             travel=ticket.travel,
             user=ticket.user,
             ticket_code=ticket.ticket_code,
-            bus_id=ticket.bus_id
+            bus_id=ticket.bus_id,
+            mobile=ticket.mobile
         )
         ticket.delete()
 @csrf_exempt
@@ -265,6 +268,7 @@ def move_ticket_to_history(request,verification_code):
             user=ticket.user,  # Must be a valid Passenger instance
             bus_id=ticket.bus_id,
             ticket_code=ticket.ticket_code,
+            mobile=ticket.mobile,#changed
             created_at=ticket.created_at,
             moved_at=timezone.now(),  # If you have a moved_at field
         )
@@ -310,5 +314,25 @@ def reset_stops(request):
             print(busid)
             Add_route.objects.filter(bus_id=busid).delete()
             return JsonResponse({"message":"Stop deleted Sucessfully"})
+@csrf_exempt
+def bus_history(request,mobilenum):
+      if request.method=="GET":
+          qs1=TicketCode.objects.filter(mobile=mobilenum)
+          qs2=PassengerHistory.objects.filter(mobile=mobilenum)
+          combined_qs=chain(qs1, qs2)
+          result=[]
+          for item in combined_qs:
+              result.append({
+                  "route":item.route,
+                   "price": item.price,
+                   "travel": item.travel,
+                    "user": item.user,
+                    "bus_id":item.bus_id,
+                    "mobile":item.mobile
+
+              })
+          return JsonResponse({"data":result})
+
+        
 
         
