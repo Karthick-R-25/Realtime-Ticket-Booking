@@ -12,11 +12,13 @@ import random, json
 otp_storage = {}
 def home(request):
     return render(request,"base.html")
+@csrf_exempt
 def send_otp(request, mobile_number):
     otp = str(random.randint(100000, 999999))
     otp_storage[mobile_number] = otp  # Store OTP (temporary - replace with real DB)
     print(f"OTP sent to {mobile_number}: {otp}")  # Debug (send SMS in real implementation)
-    return JsonResponse({'success': True})
+    return JsonResponse({'success': True,'otp':otp})
+@csrf_exempt
 def verify_otp(request, mobile_number):
     if request.method == 'POST':  # Ensure it processes POST requests only
         try:
@@ -96,6 +98,7 @@ def register_passenger(request):
     return JsonResponse({"success": False, "message": "Invalid request method."}, status=405)
 
 # this is for login
+@csrf_exempt
 def conductor_login(request):
     if request.method == 'POST':
         data = json.loads(request.body)
@@ -125,6 +128,7 @@ def conductor_dashboard(request):
     else:
         return redirect('/conductor-login/')
 #    this is for passenger login
+@csrf_exempt
 def passenger_login(request):
     if request.method == 'POST':
         data = json.loads(request.body)
@@ -144,6 +148,7 @@ def passenger_login(request):
                 return JsonResponse({'success': False, 'message': 'Invalid password.'}, status=400)
         except Passenger.DoesNotExist:
             return JsonResponse({'success': False, 'message': 'Invalid mobile number'}, status=400)
+@csrf_exempt
 def passenger_dashboard(request):
     if 'password' in request.session and 'mobile' in request.session:
         password = request.session['password']
@@ -152,6 +157,7 @@ def passenger_dashboard(request):
         return render(request,'buspassen.html',{ 'password':password,'mobile':mobile,'username':username})
     else:
         return redirect('/passenger-login/')    
+@csrf_exempt
 
 def add_route(request):
     if request.method == 'POST':
@@ -185,6 +191,7 @@ def add_route(request):
             return JsonResponse({"error": "Invalid JSON data"}, status=400)
 
     return redirect('conductor_dashboard/') 
+@csrf_exempt
 def get_routes(request, bus_id):
     routes = Add_route.objects.filter(bus_id=bus_id).values('from_stop', 'to_stop', 'price')
     return JsonResponse(list(routes), safe=False)
@@ -214,6 +221,7 @@ def save_ticket_code(request):
             return JsonResponse({"error": str(e)}, status=400)
 
     return JsonResponse({"error": "Invalid request method"}, status=405)
+@csrf_exempt
 
 def verification_code(request, code, busno):
     try:
@@ -230,6 +238,7 @@ def verification_code(request, code, busno):
         return JsonResponse(ticket_data, safe=False)
     except TicketCode.DoesNotExist:
         return JsonResponse({"message": "Invalid code or bus number"}, status=404)
+@csrf_exempt
 def move_expired_tickets():
     expiration_time = timezone.now() - timedelta(hours=2)
     expired_tickets = TicketCode.objects.filter(created_at__lte=expiration_time)
@@ -244,6 +253,7 @@ def move_expired_tickets():
             bus_id=ticket.bus_id
         )
         ticket.delete()
+@csrf_exempt
 def move_ticket_to_history(request,verification_code):
     try:
         ticket = TicketCode.objects.get(ticket_code=verification_code)
@@ -264,6 +274,7 @@ def move_ticket_to_history(request,verification_code):
 
     except TicketCode.DoesNotExist:
         return JsonResponse({"error": "Ticket not found"}, status=404)
+@csrf_exempt
 def pass_history(request):
         data = PassengerHistory.objects.all()
         result = []
@@ -279,9 +290,11 @@ def pass_history(request):
           return JsonResponse(result, safe=False)
         except:
             return JsonResponse({"message":"passenger history failed"},status=400)
+@csrf_exempt
 def logout_view(request):
     logout(request)  # Ends session
     return redirect('base.html')
+@csrf_exempt
 def pass_code(request):
        if request.method=="POST":
            data = json.loads(request.body)
@@ -290,6 +303,7 @@ def pass_code(request):
            codes= TicketCode.objects.all()
            exists = TicketCode.objects.filter(bus_id=bus_id, ticket_code=passcode).exists()
            return JsonResponse({"available": not exists,"codes":passcode})
+@csrf_exempt
 def reset_stops(request):
          if request.method=="POST":
             data=json.loads(request.body)
