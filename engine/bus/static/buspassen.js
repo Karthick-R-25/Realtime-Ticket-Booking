@@ -54,6 +54,7 @@ document.getElementById('price-display').addEventListener('click', function () {
     const username = document.getElementById('username').textContent;
     const rawPrice = document.getElementById('price-display').textContent;
     const price = parseInt(rawPrice.replace(/\D/g, ''), 10); // Extracts digits only
+     const mobile=document.getElementById("usermobile").textContent
 
 
     function generateUniqueCode() {
@@ -89,7 +90,8 @@ document.getElementById('price-display').addEventListener('click', function () {
                         passenger: counts,
                         username: username,
                         ticket_code: code,
-                        busId: busId
+                        busId: busId,
+                        mobile:mobile
                     })
                 })
                 .then(response => response.json())
