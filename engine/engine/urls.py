@@ -35,6 +35,7 @@ urlpatterns = [
     path("history_code/<int:verification_code>/",include("bus.urls")),
     path("logout",include("bus.urls")),
     path("pass_code",include("bus.urls")),
-    path("delete",include("bus.urls"))
+    path("delete",include("bus.urls")),
+    path("bus_history/<str:mobilenum>/",include("bus.urls"))
    
 ]
