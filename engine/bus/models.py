@@ -34,6 +34,7 @@ class TicketCode(models.Model):
     user=models.CharField(max_length=30,default="User")
     created_at = models.DateTimeField(auto_now_add=True)
     bus_id=models.TextField(default="TN00V000")
+    mobile=models.TextField(default="000000000")#changed
 
     def __str__(self):
         return f"{self.route} - {self.ticket_code}"
@@ -46,5 +47,6 @@ class PassengerHistory(models.Model):
     bus_id = models.CharField(max_length=20)
     created_at=models.TextField(default="not apply")
     moved_at=models.TextField(default="0:0")
+    mobile=models.TextField(default="000000000")#changed
 
 
