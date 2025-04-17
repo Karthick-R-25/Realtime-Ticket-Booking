@@ -11,6 +11,8 @@ let otperror=document.getElementById("otp-reg-error")
 let cotperror=document.getElementById("otp-reg-error")
 let passotp=document.getElementById("otp-pass")
 let conotp=document.getElementById("otp-con")
+console.log(passotp)
+console.log(conotp)
 console.log(conup)
 console.log(popup)
 function pop(){
