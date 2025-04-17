@@ -117,7 +117,7 @@ def conductor_login(request):
                 return JsonResponse({'success': False, 'message': 'Invalid password.'}, status=400)
         except Bus.DoesNotExist:
             return JsonResponse({'success': False, 'message': 'Invalid Bus ID.'}, status=400)
-    
+@csrf_exempt    
 def conductor_dashboard(request):
     move_expired_tickets(request)
     if 'password' in request.session and 'bus_id' in request.session:
@@ -158,7 +158,6 @@ def passenger_dashboard(request):
     else:
         return redirect('/passenger-login/')    
 @csrf_exempt
-
 def add_route(request):
     if request.method == 'POST':
         try:
@@ -195,6 +194,7 @@ def add_route(request):
 def get_routes(request, bus_id):
     routes = Add_route.objects.filter(bus_id=bus_id).values('from_stop', 'to_stop', 'price')
     return JsonResponse(list(routes), safe=False)
+@csrf_exempt
 def save_ticket_code(request):
     if request.method == 'POST':
         try:
@@ -222,7 +222,6 @@ def save_ticket_code(request):
 
     return JsonResponse({"error": "Invalid request method"}, status=405)
 @csrf_exempt
-
 def verification_code(request, code, busno):
     try:
         print(busno)
