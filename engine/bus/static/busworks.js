@@ -95,7 +95,7 @@ document.getElementById('send-otp-con').addEventListener('click', function () {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                alert('OTP sent successfully to ' + mobileNumber);
+                alert('OTP is ' + data.otp);
                 enableOTPInput();
                 
             } else {
@@ -213,7 +213,7 @@ document.getElementById('send-otp-pass').addEventListener('click', function () {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            alert('OTP sent successfully to ' + mobileNumber);
+            alert('OTP is'+data.otp);
             enableOTPInput();
               
         } else {
