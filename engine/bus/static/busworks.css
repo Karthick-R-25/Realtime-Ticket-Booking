@@ -578,6 +578,27 @@ th {
     font-weight: bold;
     background-color: #f9f9f9;
   }
+.history-but{
+    margin-left: 85%;
+    margin-top: 2%;
+    background-color:rgb(0, 255, 225);
+    height: 3rem;
+    width: 6rem;
+    
+  }
+  .back-but{
+   position: absolute;
+   top: 18.5%;
+   left: 0;
+    background-color:rgb(0, 255, 225);
+    height: 3rem;
+    width: 6rem;
+    
+  }
+  .his-hide{
+    visibility: hidden;
+  }
+
 
   @media only screen and (max-width: 450px) {
     .login{
