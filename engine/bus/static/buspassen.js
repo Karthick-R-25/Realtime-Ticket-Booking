@@ -120,7 +120,53 @@ document.getElementById("pass-logout").addEventListener("click", function () {
         window.location.href = "http://127.0.0.1:8000/";
     });
 });
+document.getElementById("code-history").addEventListener('click',async function(){
+            const basecontain=document.getElementById("book-form")
+            const subcontain=document.getElementById("booking-form")
+            basecontain.innerHTML=""
+            const mobile=document.getElementById("usermobile").textContent
+            let response=await fetch(`bus_history/${mobile}`)
+            let data=await response.json()
+            const historyList = document.getElementById('lister');
+            let backbut=document.getElementById("back-main")
+            backbut.classList.remove("his-hide")
+            backbut.classList.add("visi")
+           
+            data.data.map(item=>{
+                
+                const row = document.createElement("li");
+                row.className = "list-row";
+          
+                const route = document.createElement("li");
+                route.textContent = item.route;
+               
 
+                const price = document.createElement("li");
+                price.textContent = item.price;
+          
+                const travel = document.createElement("li");
+                travel.textContent = item.travel;
+          
+                const user = document.createElement("li");
+                user.textContent = item.user;
+                row.appendChild(route);
+                row.appendChild(price);
+                row.appendChild(travel);
+                row.appendChild(user); // If this is a foreign key, make sure it returns a name
+                historyList.appendChild(row);
+                basecontain.appendChild(historyList)
+            })
+            document.getElementById("back-main").addEventListener('click',function(){
+              
+                basecontain.removeChild(historyList)
+                basecontain.appendChild(subcontain)
+                backbut.classList.add("his-hide")
+                backbut.classList.remove("visi")
+            })
+            
+})
+
+   
 
    
 
