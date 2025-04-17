@@ -20,7 +20,8 @@ urlpatterns = [
     path("pass_history",views.pass_history,name="pass_history"),
     path("logout",views.logout_view,name="pass_history"),
     path("pass_code",views.pass_code,name="pass_history"),
-    path("delete",views.reset_stops,name="pass_history")
+    path("delete",views.reset_stops,name="pass_history"),
+    path("bus_history/<str:mobilenum>/",views.bus_history,name="bus_history")
 
     
 ]
