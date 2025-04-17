@@ -99,7 +99,7 @@ document.getElementById('send-otp-con').addEventListener('click', function () {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                alert('OTP is ' + data.otp);
+                
                 conotp.textContent=`OTP is ${data.otp}`
                 enableOTPInput();
                 
@@ -218,7 +218,7 @@ document.getElementById('send-otp-pass').addEventListener('click', function () {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            alert('OTP is'+data.otp);
+         
              passotp.textContent=`OTP is ${data.otp}`
             enableOTPInput();
               
