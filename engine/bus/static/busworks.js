@@ -9,6 +9,8 @@ let errors=document.getElementById("con-reg-error")
 let paserrors=document.getElementById("pas-reg-error")
 let otperror=document.getElementById("otp-reg-error")
 let cotperror=document.getElementById("otp-reg-error")
+let passotp=document.getElementById("otp-pass")
+let conotp=document.getElementById("otp-con")
 console.log(conup)
 console.log(popup)
 function pop(){
@@ -96,6 +98,7 @@ document.getElementById('send-otp-con').addEventListener('click', function () {
         .then(data => {
             if (data.success) {
                 alert('OTP is ' + data.otp);
+                conotp.textContent=`OTP is {data.otp}`
                 enableOTPInput();
                 
             } else {
@@ -214,6 +217,7 @@ document.getElementById('send-otp-pass').addEventListener('click', function () {
     .then(data => {
         if (data.success) {
             alert('OTP is'+data.otp);
+             passotp.textContent=`OTP is {data.otp}`
             enableOTPInput();
               
         } else {
