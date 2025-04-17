@@ -119,7 +119,7 @@ def conductor_login(request):
             return JsonResponse({'success': False, 'message': 'Invalid Bus ID.'}, status=400)
     
 def conductor_dashboard(request):
-    move_expired_tickets()
+    move_expired_tickets(request)
     if 'password' in request.session and 'bus_id' in request.session:
         
         password = request.session['password']
@@ -239,7 +239,7 @@ def verification_code(request, code, busno):
     except TicketCode.DoesNotExist:
         return JsonResponse({"message": "Invalid code or bus number"}, status=404)
 @csrf_exempt
-def move_expired_tickets():
+def move_expired_tickets(request):
     expiration_time = timezone.now() - timedelta(hours=2)
     expired_tickets = TicketCode.objects.filter(created_at__lte=expiration_time)
 
