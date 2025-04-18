@@ -12,7 +12,7 @@ This is a **Real-Time Ticket Booking System** for local and overcrowded Buses  ,
 - **Python**
 - **Django**
 - **REST API**
-- **SQL** (PostgreSQL)
+- **SQL** (MYSQL)
 
 ### **Authentication and Security:**
 - **CSRF Token** for protection against cross-site request forgery
