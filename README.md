@@ -1,56 +1,37 @@
-Real-Time Ticket Booking System
-This is a Real-Time Ticket Booking System for bus routes. It allows passengers to book tickets, view available routes, and verify their details using a unique three-digit code. The system also allows bus owners to register their buses, and conductors can manage and verify ticket details for passengers.
+# **Real-Time Ticket Booking System**
 
-Features:
-Passenger Registration:
+This is a **Real-Time Ticket Booking System** for bus routes, built with the following technologies:
 
-Register with a mobile number.
+### **Frontend:**
+- **HTML**
+- **CSS**
+- **JavaScript**
+- **Bootstrap**
 
-Bus Owner Registration:
+### **Backend:**
+- **Python**
+- **Django**
+- **REST API**
+- **SQL** (PostgreSQL)
 
-Register with a mobile number and license plate number.
+### **Authentication and Security:**
+- **CSRF Token** for protection against cross-site request forgery
 
-Conductor Dashboard:
+### **Features:**
+- **Passenger Registration:** Passengers register with their details, including mobile number.
+- **Bus Owner Registration:** Bus owners register with their license plate number and required details.
+- **Conductor Dashboard:** The conductor can log in and manage routes, along with their prices.
+- **Dynamic Pricing for Passengers:** Passengers log in, enter the bus ID and passenger count to see available stops and dynamic pricing.
+- **Payment and Verification:** After making a payment, passengers receive a unique 3-digit code for verifying their route, price, and details.
+- **Ticket Generation:** Conductor verifies the code, confirms passenger details, and prints the ticket. All information is stored in the passenger history.
 
-Add routes with corresponding prices.
+### **Technologies Used:**
+- **Frontend:** HTML, CSS, JavaScript, Bootstrap
+- **Backend:** Python, Django, REST API, PostgreSQL, SQL
+- **Security:** CSRF Token, User Authentication
 
-Passenger Workflow:
+### **Setup and Installation:**
 
-Log in, select bus ID, input passenger count, and view stops.
-
-Dynamic price calculation based on route and passenger count.
-
-Generate a three-digit verification code upon payment.
-
-View payment details in the dashboard and store them in the passenger history.
-
-Conductor Verification:
-
-Enter the three-digit code to verify passenger details such as route, price, username, and passenger count.
-
-Print tickets after verification and store passenger details in history.
-
-Technologies Used:
-Frontend:
-
-HTML
-
-CSS
-
-JavaScript
-
-Bootstrap
-
-Backend:
-
-Python
-
-Django
-
-REST API
-
-CSRF Token
-
-Database:
-
-SQL
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/Realtime-Ticket-Booking.git
