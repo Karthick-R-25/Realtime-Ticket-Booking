@@ -164,8 +164,10 @@ let stopCount = 1;
             .then(data => {
                 const historyList = document.querySelector(".list-table"); // Ensure <ul class="list-table"> exists
                 historyList.innerHTML = "";
-                let wanted=data.filter((val)=>val.bus_id==busid)
-                let wanted2=wanted.sort((a,b)=>new Date(b.created_at)-new Date(a.created_at)
+               let wanted2 = data
+               .filter(val => val.bus_id === busid)
+               .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+
                 wanted2.forEach(item => {
                   const row = document.createElement("li");
                   row.className = "list-row";
