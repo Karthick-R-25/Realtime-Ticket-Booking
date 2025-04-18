@@ -133,7 +133,9 @@ document.getElementById("code-history").addEventListener('click',async function(
             let backbut=document.getElementById("back-main")
             backbut.classList.remove("his-hide")
             backbut.classList.add("visi")
-           const sortedData = data.data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+            let arr=data.data
+            console.log(arr)
+           const sortedData = arr.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
 
            sortedData.map(item=>{
                 
