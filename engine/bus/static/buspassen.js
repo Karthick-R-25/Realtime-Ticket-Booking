@@ -153,7 +153,7 @@ document.getElementById("code-history").addEventListener('click',async function(
                 travel.textContent = item.travel;
           
                 const user = document.createElement("li");
-                user.textContent = item.user;
+                user.textContent = item.code;
                 row.appendChild(route);
                 row.appendChild(price);
                 row.appendChild(travel);
