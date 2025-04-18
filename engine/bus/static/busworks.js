@@ -87,7 +87,7 @@ document.getElementById('send-otp-con').addEventListener('click', function () {
     const baseUrl = window.location.origin;
     const otpUrl = `${baseUrl}/send-otp/${mobileNumber}/`;
 
-    window.history.pushState({}, '', `/send-otp/${mobileNumber}/`);
+
 
     fetch(otpUrl, {
         method: 'POST',
@@ -119,7 +119,7 @@ document.getElementById('bus-register-form').addEventListener('submit', function
     event.preventDefault()
     const mobileNumber = document.getElementById('mobile_con').value;
     const otp=document.getElementById('con-otp').value
-    window.history.pushState({}, '', `/verify-otp/${mobileNumber}/`);
+  
     console.log(otp)
     fetch(`/verify-otp/${mobileNumber}/`, {
         method: 'POST',
@@ -135,7 +135,7 @@ document.getElementById('bus-register-form').addEventListener('submit', function
         .then(response => response.json())
         .then(data => {
             if (data.otp_match) {
-               window.history.pushState({}, '', `/register-bus/`);
+             
                 
                const busId = document.getElementById('bus_id').value;
                const chassisNumber = document.getElementById('chassis_number').value;
@@ -206,8 +206,7 @@ document.getElementById('send-otp-pass').addEventListener('click', function () {
     const baseUrl = window.location.origin;
     const otpUrl = `${baseUrl}/send-otp/${mobileNumber}/`;
 
-    window.history.pushState({}, '', `/send-otp/${mobileNumber}/`);
-
+  
     fetch(otpUrl, {
         method: 'POST',
         headers: {
