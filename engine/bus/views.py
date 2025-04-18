@@ -292,7 +292,8 @@ def pass_history(request):
                 "travel": item.travel,
                 "user": item.user,
                 "bus_id":item.bus_id,
-                "created_at":item.created_at
+                "created_at":item.created_at,
+                "code":item.ticket_code
             })
           return JsonResponse(result, safe=False)
         except:
@@ -332,7 +333,9 @@ def bus_history(request,mobilenum):
                    "travel": item.travel,
                     "user": item.user,
                     "bus_id":item.bus_id,
-                    "mobile":item.mobile
+                    "mobile":item.mobile,
+                    "code":item.ticket_code,
+                    "created_at":item.created_at
 
               })
           return JsonResponse({"data":result})
