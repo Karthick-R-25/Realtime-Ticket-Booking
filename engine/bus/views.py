@@ -206,7 +206,7 @@ def save_ticket_code(request):
             ticket_code = data.get('ticket_code')
             busId=data.get('busId'),
             mobile=data.get("mobile")
-
+            
             TicketCode.objects.create(
                 route=route,
                 price=price,
@@ -227,6 +227,8 @@ def save_ticket_code(request):
 def verification_code(request, code, busno):
     try:
         print(busno)
+        allticket=TicketCode.objects.all()
+        print(allticket)
         ticket = TicketCode.objects.get(ticket_code=code, bus_id=busno)
         ticket_data = [
             ticket.route,
