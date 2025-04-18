@@ -204,7 +204,7 @@ def save_ticket_code(request):
             Travel=data.get('Travel')
             username=data.get('username')
             ticket_code = data.get('ticket_code')
-            busId=data.get('busId'),
+            busId=data.get('busId')
             mobile=data.get("mobile")
             
             TicketCode.objects.create(
