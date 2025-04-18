@@ -166,7 +166,7 @@ let stopCount = 1;
                 historyList.innerHTML = "";
                let wanted2 = data
                .filter(val => val.bus_id === busid)
-               .sort((a, b) => new Date(b.created_at) - new Date(a.created_at)).slice(0, arr.length > 30 ? 30 : arr.length);;
+               .sort((a, b) => new Date(b.created_at) - new Date(a.created_at)).slice(0, wanted2.length > 30 ? 30 : wanted2.length);;
 
                 wanted2.forEach(item => {
                   const row = document.createElement("li");
