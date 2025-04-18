@@ -135,7 +135,7 @@ document.getElementById("code-history").addEventListener('click',async function(
             backbut.classList.add("visi")
             let arr=data.data
             console.log(arr)
-           const sortedData = arr.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+           const sortedData = arr.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)).slice(0, 10);
 
            sortedData.map(item=>{
                 
