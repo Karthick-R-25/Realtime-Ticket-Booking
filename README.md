@@ -1,6 +1,6 @@
 # **Real-Time Ticket Booking System**
 
-This is a **Real-Time Ticket Booking System** for bus routes, built with the following technologies:
+This is a **Real-Time Ticket Booking System** for local and overcrowded Buses  , built with the following technologies:
 
 ### **Frontend:**
 - **HTML**
