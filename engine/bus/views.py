@@ -216,7 +216,8 @@ def save_ticket_code(request):
                 bus_id=busId,
                 mobile=mobile
             )
-
+            allticket=TicketCode.objects.all()
+            print(allticket)
             return JsonResponse({"message": "Ticket saved successfully!"})
 
         except Exception as e:
