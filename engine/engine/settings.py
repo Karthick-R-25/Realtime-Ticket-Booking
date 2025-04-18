@@ -84,10 +84,10 @@ WSGI_APPLICATION = 'engine.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # Use MySQL database engine
-        'NAME': 'threedigit_db',               # Your database name
-        'USER': 'dharzz',                      # Your MySQL username
-        'PASSWORD': 'KARTHICKSPIDY',           # Your MySQL password
-        'HOST': 'ticket-db.cdgyk8wsshhx.eu-north-1.rds.amazonaws.com',  # Your RDS endpoint
+        'NAME': '',               # Your database name
+        'USER': 'root',                      # Your MySQL username
+        'PASSWORD': '',           # Your MySQL password
+        'HOST': '',  # Your RDS endpoint
         'PORT': '3306',                        # Default MySQL port
     }
 }
