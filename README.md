@@ -34,4 +34,34 @@ This is a **Real-Time Ticket Booking System** for bus routes, built with the fol
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/Realtime-Ticket-Booking.git
+   git clone https://github.com/Karthick-R-25/Realtime-Ticket-Booking.git
+### **Setup and Running the Project**
+2.### MySQL Database Configuration in Django
+
+To configure your MySQL database in Django, update the `DATABASES` setting in your `settings.py` file like the following:
+
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',  # Use MySQL database engine
+        'NAME': 'yourdb_name',                 # Your database name
+        'USER': 'root',                        # Your MySQL username
+        'PASSWORD': 'Your_password',           # Your MySQL password
+        'HOST': 'localhost',                   # Host of the database, use 'localhost' or your server IP
+        'PORT': '3306',                        # Default MySQL port
+    }
+}
+
+
+3. **Create and Activate Virtual Environment:**
+   For Linux/MacOS:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   cd engine
+   python manage.py makemigrations
+   python manage.py migrate
+   python manage.py runserver
+
+
+
