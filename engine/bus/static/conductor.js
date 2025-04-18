@@ -166,7 +166,7 @@ let stopCount = 1;
                 historyList.innerHTML = "";
                let wanted2 = data
                .filter(val => val.bus_id === busid)
-               .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+               .sort((a, b) => new Date(b.created_at) - new Date(a.created_at)).slice(0, 50);
 
                 wanted2.forEach(item => {
                   const row = document.createElement("li");
@@ -183,7 +183,7 @@ let stopCount = 1;
                   travel.textContent = item.travel;
             
                   const user = document.createElement("li");
-                  user.textContent = item.user; // If this is a foreign key, make sure it returns a name
+                  user.textContent = item.code; // If this is a foreign key, make sure it returns a name
             
                   row.appendChild(route);
                   row.appendChild(price);
