@@ -186,6 +186,7 @@ let stopCount = 1;
                   travel.textContent = item.travel;
             
                   const user = document.createElement("li");
+                  user.style.color="red"
                   user.textContent = item.code; // If this is a foreign key, make sure it returns a name
             
                   row.appendChild(route);
