@@ -291,7 +291,8 @@ def pass_history(request):
                 "price": item.price,
                 "travel": item.travel,
                 "user": item.user,
-                "bus_id":item.bus_id
+                "bus_id":item.bus_id,
+                "created_at":item.created_at
             })
           return JsonResponse(result, safe=False)
         except:
