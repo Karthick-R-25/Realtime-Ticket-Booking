@@ -1,7 +1,8 @@
 # **Real-Time Ticket Booking System**
 
 This is a **Real-Time Ticket Booking System** for local and overcrowded Buses  , built with the following technologies:
-[![🔗 View Project on GitHub](https://youtu.be/PUGRdFZtRf4)](https://github.com/Karthick-R-25/Realtime-Ticket-Booking)
+[![🔗 View GitHub](https://youtu.be/PUGRdFZtRf4)](https://github.com/Karthick-R-25/Realtime-Ticket-Booking)
+
 ### **Frontend:**
 - **HTML**
 - **CSS**
